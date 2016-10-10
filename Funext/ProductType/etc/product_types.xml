@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Catalog:etc/product_types.xsd">
+    <!--<type name="funproduct" label="Fun Product" modelInstance="Magento\ConfigurableProduct\Model\Product\Type\Configurable" composite='true' indexPriority="30" sortOrder="20">-->
+    <type name="funproduct" label="Fun Product" modelInstance="Funext\ProductType\Model\Product\Type\Simple" indexPriority="30" sortOrder="20" isQty="true">
+        <!--<priceModel instance="Funext\ProductType\Model\Product\Type\Configurable\Price" />-->
+        <priceModel instance="Funext\ProductType\Model\Product\Type\Simple\Price" />
+        <!--<indexerModel instance="Magento\ConfigurableProduct\Model\ResourceModel\Product\Indexer\Price\Configurable" />-->
+        <!--<stockIndexerModel instance="Magento\ConfigurableProduct\Model\ResourceModel\Indexer\Stock\Configurable" />-->
+        <customAttributes>
+            <!--<attribute name="is_real_product" value="false"/>-->
+            <attribute name="refundable" value="true"/>
+            <!--<attribute name="taxable" value="false"/>-->
+            <!--<attribute name="is_product_set" value="true"/>-->
+        </customAttributes>
+    </type>
+</config>

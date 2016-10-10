@@ -1,0 +1,29 @@
+{
+    "name": "magestore/giftwrap-magento2",
+    "description": "N/A",
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "magestore/giftwrap-media": "1.0.0"
+    },
+    "type": "magento2-module",
+    "version": "1.0.1",
+    "license": [
+
+    ],
+    "authors": [
+        {
+            "name": "magestore",
+            "email": "support@magestore.com",
+            "homepage": "https://www.magestore.com/",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magestore\\Giftwrap\\": ""
+        }
+    }
+}

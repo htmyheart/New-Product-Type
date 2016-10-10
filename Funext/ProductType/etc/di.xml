@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category    Magestore
+ * @package     Magestore_Giftvoucher
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Begin - Add pricing price to price pool for product type is giftvoucher -->
+    <virtualType name="Funext\ProductType\Pricing\Price\Pool" type="Magento\Framework\Pricing\Price\Pool">
+        <arguments>
+            <argument name="prices" xsi:type="array">
+                <!--<item name="wishlist_configured_price" xsi:type="string">Funext\ProductType\Pricing\ConfiguredPrice\ConfigurableProduct</item>-->
+                <!--<item name="link_price" xsi:type="string">Magento\Downloadable\Pricing\Price\LinkPrice</item>-->
+                <!--<item name="regular_price" xsi:type="string">Magento\Bundle\Pricing\Price\BundleRegularPrice</item>-->
+                <!--<item name="final_price" xsi:type="string">Magento\Bundle\Pricing\Price\FinalPrice</item>-->
+                <!--<item name="tier_price" xsi:type="string">Magento\Bundle\Pricing\Price\TierPrice</item>-->
+                <!--<item name="special_price" xsi:type="string">Magento\Bundle\Pricing\Price\SpecialPrice</item>-->
+                <!--<item name="custom_option_price" xsi:type="string">Magento\Catalog\Pricing\Price\CustomOptionPrice</item>-->
+                <!--<item name="base_price" xsi:type="string">Magento\Catalog\Pricing\Price\BasePrice</item>-->
+                <!--<item name="configured_price" xsi:type="string">Magento\Bundle\Pricing\Price\ConfiguredPrice</item>-->
+                <!--<item name="bundle_option" xsi:type="string">Magento\Bundle\Pricing\Price\BundleOptionPrice</item>-->
+                <!--<item name="catalog_rule_price" xsi:type="string">Magento\CatalogRule\Pricing\Price\CatalogRulePrice</item>-->
+            </argument>
+            <argument name="target" xsi:type="object">Magento\Catalog\Pricing\Price\Pool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Funext\ProductType\Pricing\Price\Collection" type="Magento\Framework\Pricing\Price\Collection">
+        <arguments>
+            <argument name="pool" xsi:type="object">Funext\ProductType\Pricing\Price\Pool</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\Pricing\PriceInfo\Factory">
+        <arguments>
+            <argument name="types" xsi:type="array">
+                <item name="funproduct" xsi:type="array">
+                    <item name="infoClass" xsi:type="string">Magento\Framework\Pricing\PriceInfo\Base</item>
+                    <item name="prices" xsi:type="string">Funext\ProductType\Pricing\Price\Collection</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- End - Add pricing price to price pool for product type is giftvoucher -->
+</config>

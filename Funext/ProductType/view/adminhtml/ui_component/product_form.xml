@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <!--<fieldset name="new_product_fields" class="Funext\ProductType\Ui\Component\Form\Fieldset">-->
+    <fieldset name="new_product_fields">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">New Product Fields</item>
+                <item name="sortOrder" xsi:type="number">1000</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+        <field name="field_1">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="array">
+                    <item name="option_0" xsi:type="array">
+                        <item name="value" xsi:type="string">0</item>
+                        <item name="label" xsi:type="string" translate="true">Select</item>
+                    </item>
+                    <item name="option_1" xsi:type="array">
+                        <item name="value" xsi:type="string">1</item>
+                        <item name="label" xsi:type="string" translate="true">Option 1</item>
+                    </item>
+                    <item name="option_2" xsi:type="array">
+                        <item name="value" xsi:type="string">2</item>
+                        <item name="label" xsi:type="string" translate="true">Option 2</item>
+                    </item>
+                    <item name="option_3" xsi:type="array">
+                        <item name="value" xsi:type="string">3</item>
+                        <item name="label" xsi:type="string" translate="true">Option 3</item>
+                    </item>
+                </item>
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">1</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Field 1</item>
+                    <item name="source" xsi:type="string">product_attribute</item>
+                    <item name="dataScope" xsi:type="string">data.product.field_1</item>
+                </item>
+            </argument>
+        </field>
+        <field name="field_2">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Catalog/js/components/disable-on-option/input</item>
+                    <item name="imports" xsi:type="array">
+                        <item name="toggleDisable" xsi:type="string">${ $.parentName}.field_1:value</item>
+                    </item>
+                    <item name="valuesForEnable" xsi:type="array">
+                        <item name="1" xsi:type="string">1</item>
+                    </item>
+                    <item name="label" xsi:type="string">Field 2</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">product_attribute</item>
+                    <item name="dataScope" xsi:type="string">data.product.field_2</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="field_3">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Catalog/js/components/disable-on-option/input</item>
+                    <item name="imports" xsi:type="array">
+                        <item name="toggleDisable" xsi:type="string">${ $.parentName}.field_1:value</item>
+                    </item>
+                    <item name="valuesForEnable" xsi:type="array">
+                        <item name="2" xsi:type="string">3</item>
+                    </item>
+                    <item name="label" xsi:type="string">Field 3</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">decimal</item>
+                    <item name="source" xsi:type="string">product_attribute</item>
+                    <item name="dataScope" xsi:type="string">data.product.field_3</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="addbefore" xsi:type="string">$</item>
+                </item>
+            </argument>
+        </field>
+        <field name="field_4">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Catalog/js/components/disable-on-option/input</item>
+                    <item name="imports" xsi:type="array">
+                        <item name="toggleDisable" xsi:type="string">${ $.parentName}.field_1:value</item>
+                    </item>
+                    <item name="valuesForEnable" xsi:type="array">
+                        <item name="3" xsi:type="string">3</item>
+                    </item>
+                    <item name="label" xsi:type="string">Field 4</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">product_attribute</item>
+                    <item name="dataScope" xsi:type="string">data.product.field_4</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="default" xsi:type="string">1.0</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="field_5">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Field 5</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">product_attribute</item>
+                    <item name="dataScope" xsi:type="string">data.product.field_5</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">false</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>
